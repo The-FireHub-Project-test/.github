@@ -21,6 +21,6 @@ jobs:
     steps:
       - uses: actions/add-to-project@v2.0.0
         with:
-          project-url: https://github.com/orgs/The-FireHub-Project/projects/${{ inputs.projectNumber }}
+          project-url: https://github.com/orgs/The-FireHub-Project-test/projects/${{ inputs.projectNumber }}
           github-token: ${{ secrets.GH_TOKEN }}
           labeled: ${{ inputs.labeled }}
