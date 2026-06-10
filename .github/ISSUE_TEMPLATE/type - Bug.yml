@@ -1,104 +1,125 @@
 name: 🐞 Bug Report
-description: Report a bug in Core, Adapters, or Modules
-title: "[Bug] : "
+description: Report a bug in the FireHub ecosystem (Core, Runtime, Adapters, Capabilities)
+title: ""
 type: Bug
-labels: ["status: Waiting Triage"]
 
 body:
 
   - type: dropdown
-    id: platform
+    id: area
     attributes:
-      label: "Platform:"
-      description: Which part of FireHub is affected?
+      label: "Affected Area"
+      description: Select the FireHub layer affected by this bug.
       options:
-        - Core Foundation
-        - Core Professional
-        - Core Enterprise
-        - UI Adapter
-        - Infrastructure Adapter
-        - Capability Module
-        - Adapter Module
-        - Skeleton
-        - ...other platform
+        - Core
+        - Runtime Foundation
+        - Adapter Layer
+        - Capability Layer
+        - Skeleton / Template
+        - Meta / Governance
+        - Other
     validations:
       required: true
 
   - type: input
-    id: platform-version
+    id: firehub-version
     attributes:
-      label: "Platform version:"
-      description: Which version is the affected platform?
-      placeholder: "example: v4.3.24"
+      label: "FireHub Version"
+      description: Version of FireHub where the issue occurs.
+      placeholder: "e.g. v1.2.0"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: component-versions
+    attributes:
+      label: "Component Versions"
+      description: |
+        Specify exact versions of affected FireHub components.
+        Example:
+        Core: v1.2.0
+        Runtime Foundation: v0.9.3
+        Autoload Capability: v0.3.1
+      value: |
+        Core:
+        Runtime Foundation:
+        Adapter Layer:
+        Capability Module:
+        Other:
     validations:
       required: true
 
   - type: input
     id: php-version
     attributes:
-      label: "PHP version:"
-      description: Which PHP version are you using in your environment?
-      placeholder: "example: 8.5.0"
+      label: "PHP Version"
+      description: PHP version used in the environment.
+      placeholder: "e.g. 8.5.0"
     validations:
       required: true
 
   - type: checkboxes
-    id: exist
+    id: precheck
     attributes:
-      label: Have you searched the existing issues?
-      description: Please search to see if an issue already exists for the bug you encountered.
+      label: "Pre-check"
+      description: Confirm before submitting
       options:
-        - label: Yes, I have searched the existing issues
+        - label: I have searched existing issues
           required: true
 
   - type: textarea
     id: expected-behavior
     attributes:
-      label: Expected Behavior
-      description: What did you expect to happen?
+      label: "Expected Behavior"
+      description: What you expected to happen.
     validations:
       required: true
 
   - type: textarea
     id: actual-behavior
     attributes:
-      label: Actual Behavior
-      description: What actually happened?
+      label: "Actual Behavior"
+      description: What actually happened instead.
     validations:
       required: true
 
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: Steps To Reproduce
-      description: Steps to reproduce the behavior.
+      label: "Steps to Reproduce"
+      description: Steps required to reproduce the issue.
       placeholder: |
-        1. In this environment...
-        2. With this config...
-        3. Run '...'
-        4. See error...
+        1. ...
+        2. ...
+        3. ...
     validations:
       required: false
 
   - type: textarea
     id: environment
     attributes:
-      label: Environment
+      label: "Environment"
       value: |
         - OS:
-        - Web Server / CLI:
-        - Browser (if applicable):
+        - PHP SAPI:
+        - Runtime Mode:
+        - Deployment Type (Container / Bare metal / CI):
       render: markdown
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Logs / Stack Trace"
+      description: Add any relevant logs or error traces.
     validations:
       required: false
 
   - type: textarea
     id: additional-context
     attributes:
-      label: Anything else?
-      description: |
-        Links, references, screenshots, logs, stack traces, or any other relevant info that will give us more context about the issue you are encountering!
-
-        Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in.
+      label: "Additional Context"
+      description: Screenshots, references, or other useful information.
     validations:
       required: false
