@@ -1,54 +1,18 @@
 name: 🐞 Bug Report
 description: Report a bug in the FireHub ecosystem (Core, Runtime, Adapters, Capabilities)
+title: ""
 type: Bug
 
 body:
 
-  - type: dropdown
-    id: area
-    attributes:
-      label: "Affected Area"
-      description: Select the FireHub layer affected by this bug.
-      options:
-        - Core
-        - Runtime Foundation
-        - Adapter Layer
-        - Capability Layer
-        - Skeleton / Template
-        - Meta / Governance
-        - Other
-    validations:
-      required: true
-
   - type: input
-    id: firehub-version
+    id: version
     attributes:
-      label: "FireHub Version"
-      description: Version of FireHub where the issue occurs.
-      placeholder: "e.g. v1.2.0"
-    validations:
-      required: true
-      
-  - type: textarea
-    id: component-versions
-    attributes:
-      label: "Component Versions"
+      label: "Affected Version"
       description: |
-        Provide exact versions of all affected FireHub components.
-  
-        Format:
-        - Core: vX.Y.Z
-        - Runtime Foundation: vX.Y.Z
-        - Autoload: vX.Y.Z
-  
-        ⚠️ Important: This is required for reproducibility.
-      value: |
-        Core:
-        Runtime Foundation:
-        Adapter Layer:
-        Capability Layer:
-        Autoload:
-      render: markdown
+        Enter the version of this repository where the issue occurs.
+        Example: v1.2.0
+      placeholder: "vX.Y.Z"
     validations:
       required: true
 
