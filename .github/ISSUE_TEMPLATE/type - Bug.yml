@@ -1,6 +1,5 @@
 name: 🐞 Bug Report
 description: Report a bug in the FireHub ecosystem (Core, Runtime, Adapters, Capabilities)
-title: ""
 type: Bug
 
 body:
