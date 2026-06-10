@@ -30,23 +30,27 @@ body:
       required: true
       
   - type: textarea
-    id: component-versions
-    attributes:
-      label: "Component Versions"
-      description: |
-        Specify exact versions of affected FireHub components.
-        Example:
-        Core: v1.2.0
-        Runtime Foundation: v0.9.3
-        Autoload Capability: v0.3.1
-      value: |
-        Core:
-        Runtime Foundation:
-        Adapter Layer:
-        Capability Module:
-        Other:
-    validations:
-      required: true
+  id: component-versions
+  attributes:
+    label: "Component Versions"
+    description: |
+      Provide exact versions of all affected FireHub components.
+
+      Format:
+      - Core: vX.Y.Z
+      - Runtime Foundation: vX.Y.Z
+      - Autoload: vX.Y.Z
+
+      ⚠️ Important: This is required for reproducibility.
+    value: |
+      Core:
+      Runtime Foundation:
+      Adapter Layer:
+      Capability Layer:
+      Autoload:
+    render: markdown
+  validations:
+    required: true
 
   - type: input
     id: php-version
